@@ -9,14 +9,14 @@ import Foundation
 
 class TaskModel {
     static func getAllTasks(completionHandler: @escaping(_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) {
-        let url = URL(string: "http://localhost:8000/tasks")
+        let url = URL(string: "https://saudibucketlistapi.herokuapp.com/tasks/")
         let session = URLSession.shared
         let task = session.dataTask(with: url!, completionHandler: completionHandler)
         task.resume()
     }
     static func addTaskWithObjective(objective: String, completionHandler: @escaping(_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) {
      // Create the url to request
-            if let urlToReq = URL(string: "http://localhost:8000/tasks") {
+            if let urlToReq = URL(string: "https://saudibucketlistapi.herokuapp.com/tasks/") {
                 // Create an NSMutableURLRequest using the url. This Mutable Request will allow us to modify the headers.
                 var request = URLRequest(url: urlToReq)
                 // Set the method to POST
